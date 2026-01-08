@@ -1,0 +1,23 @@
+[Unit]
+Description=Gunicorn instance for aramco-dashboard-3d-ap Flask app
+After=network.target
+
+[Service]
+User=cuiw0b
+Group=g-cuiw0b
+WorkingDirectory=/iap/development/aramco-dashboard-3d-ap
+Environment="PATH=/iap/development/aramco-dashboard-3d-ap/venv/bin"
+
+ExecStart=/iap/development/aramco-dashboard-3d-ap/venv/bin/gunicorn \
+          -c /iap/development/aramco-dashboard-3d-ap/gunicorn.conf.py \
+          wsgi:app
+
+# Send logs to files
+StandardOutput=append:/var/log/aramco-dashboard-3d-ap/gunicorn.out.log
+StandardError=append:/var/log/aramco-dashboard-3d-ap/gunicorn.err.log
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

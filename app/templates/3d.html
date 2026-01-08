@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dust 3D</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../static/css/main.css">
+    <!-- <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.0/dist/nouislider.min.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
+                "three/tsl": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/nodes/Nodes.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script type="module">
+        import {init} from '../static/js/3d-volume.js';
+        init('container');
+    </script>
+
+    
+    
+</body>
+
+</html>
